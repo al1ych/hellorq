@@ -1,4 +1,3 @@
-# filters/write_filter.py
 import csv
 
 def write_csv(file_path, data, fieldnames):

@@ -1,5 +1,3 @@
-# main.py
-
 from filters.source_filter import read_csv
 from filters.transform_filter import transform_data
 from filters.pressure_filter import detect_pressure_anomalies, correct_pressure

@@ -1,6 +1,3 @@
-# filters/transform_filter.py
-
-# Константы для конвертации
 MPH_TO_MPS = 0.44704
 
 def transform_data(data):

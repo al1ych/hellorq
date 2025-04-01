@@ -1,4 +1,3 @@
-# filters/source_filter.py
 import csv
 
 def read_csv(file_path):

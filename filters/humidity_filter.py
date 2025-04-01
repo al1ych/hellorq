@@ -1,5 +1,3 @@
-# filters/humidity_filter.py
-
 def filter_humidity_anomalies(data):
     """
     Фильтрация записей с аномалиями влажности: ниже 30% или выше 90%.
