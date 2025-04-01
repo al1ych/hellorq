@@ -1,9 +1,9 @@
 def detect_pressure_anomalies(data):
     """
-    Выявление аномальных изменений давления.
-    Для каждой записи, начиная со второй, если разница с предыдущим валидным значением превышает 10 hPa,
-    запись помечается как аномальная.
-    Возвращается список флагов и журнал аномалий.
+    Detecting pressure anomalies.
+    For each record starting from the second, if the difference with the previous valid value exceeds 10 hPa,
+    the record is marked as an anomaly.
+    Returns a list of flags and an anomalies log.
     """
     anomaly_flags = [False] * len(data)
     anomaly_log = []
@@ -27,7 +27,7 @@ def detect_pressure_anomalies(data):
 
 def correct_pressure(data, anomaly_flags):
     """
-    Корректировка аномальных значений давления с помощью линейной интерполяции.
+    Corrects anomalous pressure values using linear interpolation.
     """
     corrected_pressures = [row["Pressure_hPa"] for row in data]
     n = len(data)

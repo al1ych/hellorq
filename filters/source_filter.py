@@ -2,8 +2,8 @@ import csv
 
 def read_csv(file_path):
     """
-    Чтение данных из CSV-файла.
-    Ожидаемый формат:
+    Read data from a CSV file.
+    Expected format:
     Timestamp,Temperature_F,Humidity_Percent,Pressure_hPa,WindSpeed_mph
     """
     data = []
