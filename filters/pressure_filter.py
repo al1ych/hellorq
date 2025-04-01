@@ -10,7 +10,7 @@ def detect_pressure_anomalies(data):
     anomaly_flags = [False] * len(data)
     anomaly_log = []
     
-    last_valid_index = 0  # первый элемент считаем валидным
+    last_valid_index = 0 
     
     for i in range(1, len(data)):
         current_pressure = data[i]["Pressure_hPa"]
@@ -49,7 +49,6 @@ def correct_pressure(data, anomaly_flags):
                 fraction = (k - start_index) / (j - start_index)
                 corrected_pressures[k] = start_value + fraction * (end_value - start_value)
         else:
-            # Если блок аномалий идёт до конца, используем последнее валидное значение
             for k in range(i, j):
                 corrected_pressures[k] = start_value
         i = j
