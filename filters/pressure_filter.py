@@ -1,5 +1,3 @@
-# filters/pressure_filter.py
-
 def detect_pressure_anomalies(data):
     """
     Выявление аномальных изменений давления.
