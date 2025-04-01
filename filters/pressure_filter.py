@@ -7,22 +7,19 @@ def detect_pressure_anomalies(data):
     """
     anomaly_flags = [False] * len(data)
     anomaly_log = []
-    
-    last_valid_index = 0 
-    
+
     for i in range(1, len(data)):
         current_pressure = data[i]["Pressure_hPa"]
-        last_valid_pressure = data[last_valid_index]["Pressure_hPa"]
-        if abs(current_pressure - last_valid_pressure) > 10:
+        previous_pressure = data[i - 1]["Pressure_hPa"]
+        if abs(current_pressure - previous_pressure) > 10:
             anomaly_flags[i] = True
             anomaly_log.append({
                 "Timestamp": data[i]["Timestamp"],
                 "Pressure_hPa": current_pressure,
-                "Previous_Pressure": last_valid_pressure,
-                "Difference": abs(current_pressure - last_valid_pressure)
+                "Previous_Pressure": previous_pressure,
+                "Difference": abs(current_pressure - previous_pressure)
             })
-        else:
-            last_valid_index = i
+
     return anomaly_flags, anomaly_log
 
 def correct_pressure(data, anomaly_flags):

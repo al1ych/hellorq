@@ -2,7 +2,7 @@ MPH_TO_MPS = 0.44704
 
 def transform_data(data):
     """
-    Apply convertations:
+    Apply conversions:
     - Convert temperature from F to °C
     - Convert wind speed from mph to m/s
     """

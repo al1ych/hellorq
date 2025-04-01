@@ -20,5 +20,5 @@ def read_csv(file_path):
                 }
                 data.append(record)
             except Exception as e:
-                print(f"Ошибка при обработке строки {row}: {e}")
+                print(f"Error reading data {row}: {e}")
     return data
